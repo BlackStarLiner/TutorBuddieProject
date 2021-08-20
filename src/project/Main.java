@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.sql.*;
@@ -16,12 +18,24 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("landing.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
 
+    public Scene landingScene(){
+
+        Button reqTutButton = new Button("REQUEST TUTOR");
+        reqTutButton.setId("#reqTutButton");
+        Button becomeTutButton = new Button("BECOME A TUTOR");
+        becomeTutButton.setId("#becomeTutButton");
+
+        GridPane root = new GridPane();
+
+
+
+    }
 
     public static void main(String[] args) {
 
