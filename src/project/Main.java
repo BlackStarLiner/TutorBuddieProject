@@ -24,12 +24,10 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-
         launch(args);
         //connectToDB();
         if (conn!=null)
-            System.out.println("ghfjk");
-
+            System.out.println("");
     }
 
   /*  public static void connectToDB() {
