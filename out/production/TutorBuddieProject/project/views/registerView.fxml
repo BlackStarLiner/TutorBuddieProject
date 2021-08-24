@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.MainController">
+   <center>
+      <GridPane hgap="2.0" prefHeight="417.0" prefWidth="601.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="233.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="63.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="10.0" prefWidth="304.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="27.0" prefWidth="214.0" text="Student Registration " textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <TextField fx:id="fNameTxtField" prefHeight="25.0" prefWidth="367.0" promptText="First Name" GridPane.rowIndex="1" />
+            <TextField fx:id="emailTxtField" promptText="Email Address / Username " GridPane.rowIndex="2" />
+            <TextField fx:id="streetNameTxtField" prefHeight="25.0" prefWidth="259.0" promptText="Street" GridPane.rowIndex="3" />
+            <TextField fx:id="pCodeTxtField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" promptText="Postal Code" GridPane.rowIndex="5" />
+            <TextField fx:id="lNameTxtField" promptText="Last Name" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="suburbTxtField" promptText="Suburb" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="cityTxtField" promptText="City" GridPane.rowIndex="4" />
+            <PasswordField fx:id="passTxtField" promptText="Password" GridPane.rowIndex="6" />
+            <PasswordField fx:id="passReEnteredTxtField" promptText="Re-enter password" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="REGISTER" GridPane.rowIndex="7" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" text="CANCEL" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+         </children>
+      </GridPane>
+   </center>
+   <padding>
+      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+   </padding>
+</BorderPane>
