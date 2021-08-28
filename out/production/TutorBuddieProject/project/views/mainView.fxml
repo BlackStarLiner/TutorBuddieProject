@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -9,12 +10,12 @@
    <left>
       <VBox prefHeight="468.0" prefWidth="259.0" spacing="80.0" style="-fx-background-color: #F4A896;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="requestButton" mnemonicParsing="false" onAction="#actionOnClickReqButton" prefHeight="70.0" prefWidth="150.0" style="-fx-background-color: #358597; -fx-background-radius: 0; -fx-font-family: Arial Narrow; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="REQUEST TUTOR" textFill="#f4a896">
+            <Button fx:id="requestButton" mnemonicParsing="false" onAction="#actionOnClickReqButton" prefHeight="70.0" prefWidth="186.0" style="-fx-background-color: #358597; -fx-background-radius: 0; -fx-font-family: Arial Narrow; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="REQUEST TUTOR" textFill="#f4a896">
                <font>
                   <Font name="Goudy Old Style Bold" size="13.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="150.0" style="-fx-background-color: #358597; -fx-background-radius: 0; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: Arial Narrow;" text="BECOME A TUTOR" textFill="#f4a896">
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="190.0" style="-fx-background-color: #358597; -fx-background-radius: 0; -fx-font-weight: bold; -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 ); -fx-font-family: Arial Narrow;" text="BECOME A TUTOR" textFill="#f4a896">
                <font>
                   <Font name="Goudy Old Style Bold" size="13.0" />
                </font>
@@ -29,12 +30,15 @@
       </VBox>
    </left>
    <center>
-      <Pane prefHeight="446.0" prefWidth="800.0" style="-fx-background-color: #F4A896;" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="468.0" prefWidth="391.0" style="-fx-background-color: #F4A896;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="291.0" fitWidth="262.0" layoutX="79.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" />
+         </children></Pane>
    </center>
    <top>
       <Pane prefHeight="104.0" prefWidth="861.0" style="-fx-background-color: #358597;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="308.0" layoutY="8.0" prefHeight="89.0" prefWidth="329.0" text="TUTOR BUDDIE" textFill="#f7c5cc">
+            <Label alignment="CENTER" layoutX="304.0" layoutY="8.0" prefHeight="77.0" prefWidth="275.0" style="-fx-border-color: #F4A896; -fx-border-style: solid;" text="TUTOR BUDDIE" textFill="#f7c5cc">
                <font>
                   <Font size="37.0" />
                </font>
@@ -42,6 +46,6 @@
          </children></Pane>
    </top>
    <right>
-      <Pane prefHeight="426.0" prefWidth="207.0" style="-fx-background-color: #F4A896;" BorderPane.alignment="CENTER" />
+      <Pane prefHeight="468.0" prefWidth="232.0" style="-fx-background-color: #F4A896;" BorderPane.alignment="CENTER" />
    </right>
 </BorderPane>
