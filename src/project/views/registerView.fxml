@@ -7,7 +7,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="553.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.MainController">
    <center>
-      <GridPane hgap="2.0" prefHeight="373.0" prefWidth="526.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="315.0" prefWidth="514.0" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="233.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="2.0" prefWidth="5.0" />
@@ -45,7 +45,7 @@
             <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onCancelClicked" prefHeight="31.0" prefWidth="155.0" text="CANCEL" GridPane.columnIndex="2" GridPane.rowIndex="7" />
          </children>
          <padding>
-            <Insets right="50.0" />
+            <Insets left="50.0" right="50.0" />
          </padding>
       </GridPane>
    </center>

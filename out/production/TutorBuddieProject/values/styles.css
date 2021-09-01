@@ -1,0 +1,33 @@
+#requestTutButton, #becomeTutorButton, #loginButton,
+#aboutButton, #tutorsButton, #studyMaterialButton, #logPageButton, #cancelPageButton {
+    -fx-background-color: #358597;
+    -fx-border-radius: 0;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-effect:  dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1);
+    -fx-text-fill: #f7c5cc;
+    -fx-font-style: bold;
+    -fx-font-size: 13;
+    -fx-font-family: "Goudy Old Style";
+}
+
+#titleButton{
+    -fx-background-color: #358597;
+    -fx-border-radius: 0;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-effect:  dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1);
+    -fx-text-fill: #f7c5cc;
+    -fx-font-style: bold;
+    -fx-font-size: 25;
+    -fx-font-family: "Goudy Old Style";
+    -fx-border-color: #f7c5cc;
+}
+
+#labelPassword, #labelUserName{
+    -fx-text-fill: #358597;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-font-size: 13;
+}
+
