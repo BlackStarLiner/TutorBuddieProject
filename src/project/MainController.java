@@ -53,6 +53,8 @@ public class MainController {
     public Label suburbLabel;
     public Label pCodeLabel;
     public Label cityLabel;
+    public Label emailLabel;
+    public Button profileButton;
     Student student;
 
 
@@ -215,10 +217,21 @@ public class MainController {
         }
     }
 
-    public void onClickedProfileButton() {
+    public void onClickedProfileButton() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("views/studentProfileView.fxml"));
+        mainStage = (Stage)profileButton.getScene().getWindow();
+        mainStage.setScene(new Scene(root,1000,600));
+
         fNameLabel.setText(student.getFirstName());
         lNameLabel.setText(student.getLastName());
-        labe
+        emailLabel.setText(student.getEmail());
+
+        contactNumberLabel.setText(student.getContactNumber());
+        streetLabel.setText(student.getStreet());
+        suburbLabel.setText(student.getSuburb());
+        cityLabel.setText(student.getCity());
+        pCodeLabel.setText(student.getpCode());
+
     }
 }
 
