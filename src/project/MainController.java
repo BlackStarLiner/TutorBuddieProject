@@ -213,14 +213,14 @@ public class MainController {
             connection.close();
         }
         catch (Exception ex) {
-            System.out.println("   Unable to disconnect from database");
+            System.out.println("Unable to disconnect from database");
         }
     }
 
     public void onClickedProfileButton() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("views/studentProfileView.fxml"));
         mainStage = (Stage)profileButton.getScene().getWindow();
-        mainStage.setScene(new Scene(root,1000,600));
+        mainStage.setScene(new Scene(root,500,500));
 
         fNameLabel.setText(student.getFirstName());
         lNameLabel.setText(student.getLastName());
@@ -232,6 +232,9 @@ public class MainController {
         cityLabel.setText(student.getCity());
         pCodeLabel.setText(student.getpCode());
 
+    }
+
+    public void onClickedProfilePicButton(ActionEvent event) {
     }
 }
 
