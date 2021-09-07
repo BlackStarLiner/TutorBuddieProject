@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Student {
 
+    private SimpleIntegerProperty studentID;
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
     private SimpleStringProperty email;
@@ -11,6 +12,8 @@ public class Student {
     private SimpleStringProperty city;
     private SimpleStringProperty suburb;
     private SimpleIntegerProperty pCode;
+
+
 
     public Student(SimpleStringProperty firstName, SimpleStringProperty lastName,
                    SimpleStringProperty email, SimpleStringProperty street,
@@ -108,5 +111,17 @@ public class Student {
 
     public void setpCode(int pCode) {
         this.pCode.set(pCode);
+    }
+
+    public int getStudentID() {
+        return studentID.get();
+    }
+
+    public SimpleIntegerProperty studentIDProperty() {
+        return studentID;
+    }
+
+    public void setStudentID(int studentID) {
+        this.studentID.set(studentID);
     }
 }

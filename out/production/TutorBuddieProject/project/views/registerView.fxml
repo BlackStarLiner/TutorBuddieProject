@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="553.0" style="-fx-background-color: #f7c5cc;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.StudentRegistrationController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="550.0" style="-fx-background-color: #f7c5cc;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.StudentRegistrationController">
    <center>
-      <GridPane prefHeight="330.0" prefWidth="542.0" style="-fx-background-color: #f7c5cc;" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="378.0" prefWidth="578.0" style="-fx-background-color: #f7c5cc;" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="233.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="2.0" prefWidth="5.0" />
@@ -22,6 +22,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label prefHeight="27.0" prefWidth="214.0" text="Student Registration " textAlignment="CENTER">
@@ -32,17 +38,26 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <TextField fx:id="fNameTxtField" prefHeight="25.0" prefWidth="367.0" promptText="First Name" GridPane.rowIndex="1" />
-            <TextField fx:id="emailTxtField" promptText="Email Address / Username " GridPane.rowIndex="2" />
-            <TextField fx:id="streetNameTxtField" prefHeight="25.0" prefWidth="259.0" promptText="Street" GridPane.rowIndex="3" />
-            <TextField fx:id="pCodeTxtField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" promptText="Postal Code" GridPane.rowIndex="5" />
-            <TextField fx:id="lNameTxtField" prefHeight="25.0" prefWidth="256.0" promptText="Last Name" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField fx:id="suburbTxtField" promptText="Suburb" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <TextField fx:id="cityTxtField" promptText="City" GridPane.rowIndex="4" />
-            <PasswordField fx:id="passTxtField" promptText="Password" GridPane.rowIndex="6" />
-            <PasswordField fx:id="passReEnteredTxtField" promptText="Re-enter password" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Button fx:id="registerBtn" mnemonicParsing="false" onAction="#onRegisterClicked" prefHeight="31.0" prefWidth="175.0" stylesheets="@../../values/styles.css" text="REGISTER" GridPane.rowIndex="7" />
-            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onCancelClicked" prefHeight="31.0" prefWidth="155.0" stylesheets="@../../values/styles.css" text="CANCEL" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="fNameTxtField" prefHeight="25.0" prefWidth="367.0" promptText="First Name" GridPane.rowIndex="2" />
+            <TextField fx:id="emailTxtField" promptText="Email Address / Username " GridPane.rowIndex="4" />
+            <TextField fx:id="streetNameTxtField" prefHeight="25.0" prefWidth="259.0" promptText="Street" GridPane.rowIndex="6" />
+            <TextField fx:id="pCodeTxtField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="90.0" promptText="Postal Code" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <TextField fx:id="lNameTxtField" prefHeight="25.0" prefWidth="256.0" promptText="Last Name" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="suburbTxtField" promptText="Suburb" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="cityTxtField" promptText="City" GridPane.rowIndex="8" />
+            <PasswordField fx:id="passTxtField" promptText="Password" GridPane.rowIndex="11" />
+            <PasswordField fx:id="passReEnteredTxtField" promptText="Re-enter password" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            <Button fx:id="registerBtn" mnemonicParsing="false" onAction="#onRegisterClicked" prefHeight="25.0" prefWidth="118.0" stylesheets="@../../values/styles.css" text="REGISTER" GridPane.rowIndex="13" />
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onCancelClicked" prefHeight="25.0" prefWidth="108.0" stylesheets="@../../values/styles.css" text="CANCEL" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+            <Label prefHeight="17.0" prefWidth="149.0" text="Email Address (username)" GridPane.rowIndex="3" />
+            <Label prefHeight="17.0" prefWidth="85.0" text="First name" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="121.0" text="Street name" GridPane.rowIndex="5" />
+            <Label prefHeight="17.0" prefWidth="117.0" text="City" GridPane.rowIndex="7" />
+            <Label prefWidth="101.0" text="Postal code" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Label text="Password" GridPane.rowIndex="10" />
+            <Label prefHeight="17.0" prefWidth="115.0" text="Last name" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="118.0" text="Suburb" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label layoutX="60.0" layoutY="243.0" prefHeight="17.0" prefWidth="112.0" text="Password" GridPane.columnIndex="2" GridPane.rowIndex="10" />
          </children>
          <padding>
             <Insets left="50.0" right="50.0" />

@@ -127,9 +127,7 @@ public class MainController{
 
     // Query Student table
     public void onClickedLoginButton() throws SQLException, ClassNotFoundException, IOException {
-
         connectToDB();
-
         Parent root = FXMLLoader.load(getClass().getResource("views/loginView.fxml"));
         mainStage = (Stage) loginButton.getScene().getWindow();
         mainStage.setScene(new Scene(root, 600, 600));
@@ -175,17 +173,14 @@ public class MainController{
 
     public void onClickedProfileButton() throws IOException {
 
-        //Parent root = FXMLLoader.load(getClass().getResource("views/studentProfileView.fxml"));
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("views/studentProfileView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("views/studentProfileView.fxml"));
+/*        FXMLLoader loader = new FXMLLoader(getClass().getResource("views/studentProfileView.fxml"));
         Parent root = loader.load();
 
         StudentProfileController studentProfileController = loader.getController();
-        studentProfileController.setInformation(student);
-
-
+        studentProfileController.setInformation(student);*/
         mainStage = (Stage)profileButton.getScene().getWindow();
-        mainStage.setScene(new Scene(root,500,500));
+        mainStage.setScene(new Scene(root,800,500));
     }
 
 

@@ -45,17 +45,16 @@ public class LoginController {
         String pass = passTextFieldLoginPage.getText();
 
         student = dbUtil.findStudent(userName, pass);
+        //FXMLLoader loader = new FXMLLoader(getClass().getResource("views/MainController.fxml"));
+        //Parent root = loader.load();
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("views/MainController.fxml"));
-       // Parent root = loader.load();
-
-        MainController mainController = loader.getController();
+        //MainController mainController = loader.getController();
 
         if(student != null) {
             Stage stage = (Stage) loginButton.getScene().getWindow();
 
             stage.hide();
-            mainController.student = student;
+            //mainController.student = student;
             System.out.println(student.getpCode());
         }
         else
