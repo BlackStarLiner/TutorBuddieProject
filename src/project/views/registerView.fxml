@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="553.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="553.0" style="-fx-background-color: #f7c5cc;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.StudentRegistrationController">
    <center>
-      <GridPane prefHeight="315.0" prefWidth="514.0" BorderPane.alignment="CENTER">
+      <GridPane prefHeight="330.0" prefWidth="542.0" style="-fx-background-color: #f7c5cc;" BorderPane.alignment="CENTER">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="260.0" minWidth="10.0" prefWidth="233.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="2.0" prefWidth="5.0" />
@@ -41,8 +41,8 @@
             <TextField fx:id="cityTxtField" promptText="City" GridPane.rowIndex="4" />
             <PasswordField fx:id="passTxtField" promptText="Password" GridPane.rowIndex="6" />
             <PasswordField fx:id="passReEnteredTxtField" promptText="Re-enter password" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Button fx:id="registerBtn" mnemonicParsing="false" onAction="#onRegisterClicked" prefHeight="31.0" prefWidth="175.0" text="REGISTER" GridPane.rowIndex="7" />
-            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onCancelClicked" prefHeight="31.0" prefWidth="155.0" text="CANCEL" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Button fx:id="registerBtn" mnemonicParsing="false" onAction="#onRegisterClicked" prefHeight="31.0" prefWidth="175.0" stylesheets="@../../values/styles.css" text="REGISTER" GridPane.rowIndex="7" />
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onCancelClicked" prefHeight="31.0" prefWidth="155.0" stylesheets="@../../values/styles.css" text="CANCEL" GridPane.columnIndex="2" GridPane.rowIndex="7" />
          </children>
          <padding>
             <Insets left="50.0" right="50.0" />

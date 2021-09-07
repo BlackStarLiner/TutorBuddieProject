@@ -45,12 +45,12 @@
          <children>
             <AnchorPane layoutX="722.0" layoutY="19.0" prefHeight="70.0" prefWidth="185.0">
                <children>
-                  <Button fx:id="loginButton" layoutY="35.0" mnemonicParsing="false" onAction="#onClickedLoginButton" stylesheets="@../../values/styles.css" text="LOGIN" />
                   <Button fx:id="profileButton" layoutX="81.0" layoutY="35.0" mnemonicParsing="false" onAction="#onClickedProfileButton" prefHeight="25.0" prefWidth="87.0" text="PROFILE">
                      <stylesheets>
                         <URL value="@../../values/styles.css" />
                         <URL value="@../../values/styles.css" />
                      </stylesheets></Button>
+                  <Button fx:id="mainLoginButton" layoutY="35.0" mnemonicParsing="false" onAction="#onClickedMainLoginButton" prefHeight="21.0" prefWidth="66.0" stylesheets="@../../values/styles.css" text="LOG IN" />
                </children></AnchorPane>
             <AnchorPane layoutX="349.0" layoutY="18.0" prefHeight="69.0" prefWidth="334.0">
                <children>

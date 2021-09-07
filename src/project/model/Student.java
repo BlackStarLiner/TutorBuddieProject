@@ -1,4 +1,5 @@
 package project.model;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Student {
@@ -6,21 +7,19 @@ public class Student {
     private SimpleStringProperty firstName;
     private SimpleStringProperty lastName;
     private SimpleStringProperty email;
-    private SimpleStringProperty contactNumber;
     private SimpleStringProperty street;
     private SimpleStringProperty city;
     private SimpleStringProperty suburb;
-    private SimpleStringProperty pCode;
+    private SimpleIntegerProperty pCode;
 
     public Student(SimpleStringProperty firstName, SimpleStringProperty lastName,
-                   SimpleStringProperty email, SimpleStringProperty contactNumber,
-                   SimpleStringProperty street, SimpleStringProperty city,
-                   SimpleStringProperty suburb, SimpleStringProperty pCode) {
+                   SimpleStringProperty email, SimpleStringProperty street,
+                   SimpleStringProperty city, SimpleStringProperty suburb,
+                   SimpleIntegerProperty pCode) {
 
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.contactNumber = contactNumber;
         this.street = street;
         this.city = city;
         this.suburb = suburb;
@@ -63,18 +62,6 @@ public class Student {
         this.email.set(email);
     }
 
-    public String getContactNumber() {
-        return contactNumber.get();
-    }
-
-    public SimpleStringProperty contactNumberProperty() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber.set(contactNumber);
-    }
-
     public String getStreet() {
         return street.get();
     }
@@ -111,15 +98,15 @@ public class Student {
         this.suburb.set(suburb);
     }
 
-    public String getpCode() {
+    public int getpCode() {
         return pCode.get();
     }
 
-    public SimpleStringProperty pCodeProperty() {
+    public SimpleIntegerProperty pCodeProperty() {
         return pCode;
     }
 
-    public void setpCode(String pCode) {
+    public void setpCode(int pCode) {
         this.pCode.set(pCode);
     }
 }

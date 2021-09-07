@@ -2,7 +2,8 @@
 #aboutButton, #tutorsButton, #studyMaterialButton,
 #logPageButton, #cancelPageButton, #profileButton,
 #editProfilePicButton, #addModulesButton,
-#editProfileButton {
+#editProfileButton, #registerBtn, #cancelBtn,
+#viewModulesButton, #sessionButton, #mainLoginButton{
     -fx-background-color: #358597;
     -fx-border-radius: 0;
     -fx-font-family: "Arial Narrow";
