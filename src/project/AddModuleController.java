@@ -44,8 +44,15 @@ public class AddModuleController implements Initializable {
         });
     }
 
-    public void onClickSaveModuleButton(ActionEvent event) {
+    public void onClickSaveModuleButton(ActionEvent event) throws SQLException, ClassNotFoundException {
 
+        for (int i = 0; i < modules.size(); i++) {
+            Module curModule = modules.get(i);
+            if(selectedModule.equals(curModule.getModuleName())){
+                dbUtil.enrollModule(1,curModule.getModuleID());
+                return;
+            }
+        }
     }
 
     public void onClickAddSessionButton(ActionEvent event) {

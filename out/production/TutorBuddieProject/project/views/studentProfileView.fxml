@@ -17,22 +17,22 @@
                   <Font name="System Bold" size="12.0" />
                </font></Button>
             <ImageView fitHeight="31.0" fitWidth="35.0" layoutX="28.0" layoutY="188.0" pickOnBounds="true" preserveRatio="true" />
-            <Button fx:id="viewModulesButton" layoutX="15.0" layoutY="218.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" stylesheets="@../../values/styles.css" text="VIEW MODULES" textFill="#f2eded">
+            <Button fx:id="viewModulesButton" layoutX="15.0" layoutY="218.0" mnemonicParsing="false" onAction="#onClickViewModuleButton" prefHeight="25.0" prefWidth="162.0" stylesheets="@../../values/styles.css" text="VIEW MODULES" textFill="#f2eded">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="sessionButton" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onAction="#onClickedProfilePicButton" prefHeight="25.0" prefWidth="162.0" stylesheets="@../../values/styles.css" text="SESSIONS" textFill="#f2eded">
+            <Button fx:id="sessionButton" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onAction="#onClickSessionButton" prefHeight="25.0" prefWidth="162.0" stylesheets="@../../values/styles.css" text="SESSIONS" textFill="#f2eded">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="editProfileButton" layoutX="14.0" layoutY="314.0" mnemonicParsing="false" onAction="#onClickedProfilePicButton" prefHeight="25.0" prefWidth="162.0" stylesheets="@../../values/styles.css" text="EDIT PROFILE DETAILS" textFill="#f2eded">
+            <Button fx:id="editProfileButton" layoutX="14.0" layoutY="314.0" mnemonicParsing="false" onAction="#onClickEditProfileDetailsButton" prefHeight="25.0" prefWidth="162.0" stylesheets="@../../values/styles.css" text="EDIT PROFILE DETAILS" textFill="#f2eded">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="addModulesButton" layoutX="15.0" layoutY="176.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" stylesheets="@../../values/styles.css" text="ADD MODULES" textFill="#f2eded">
+            <Button fx:id="addModulesButton" layoutX="15.0" layoutY="176.0" mnemonicParsing="false" onAction="#onClickAddModuleButton" prefHeight="25.0" prefWidth="162.0" stylesheets="@../../values/styles.css" text="ADD MODULES" textFill="#f2eded">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -44,7 +44,7 @@
          </styleClass>
       </AnchorPane>
       <Pane layoutX="187.0" prefHeight="407.0" prefWidth="414.0" />
-      <VBox layoutX="219.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="644.0" prefWidth="476.0" style="-fx-background-color: #f7c5cc;" styleClass="primary-color" stylesheets="@../../values/myStyles.css">
+      <VBox layoutX="219.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="644.0" prefWidth="441.0" style="-fx-background-color: #f7c5cc;" styleClass="primary-color" stylesheets="@../../values/myStyles.css">
          <children>
             <HBox prefHeight="45.0" prefWidth="405.0">
                <children>
@@ -103,7 +103,7 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="139.0" prefHeight="42.0" prefWidth="413.0">
                <children>
-                  <Label prefHeight="42.0" prefWidth="120.0" text="Contact number:" textFill="#358597">
+                  <Label prefHeight="42.0" prefWidth="173.0" text="Contact number:" textFill="#358597">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -113,7 +113,7 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="226.0" prefHeight="42.0" prefWidth="413.0">
                <children>
-                  <Label fx:id="streetLabel" prefHeight="42.0" prefWidth="120.0" text="Address:" textFill="#358597">
+                  <Label fx:id="streetLabel" prefHeight="42.0" prefWidth="141.0" text="Address:" textFill="#358597">
                      <padding>
                         <Insets left="10.0" />
                      </padding>

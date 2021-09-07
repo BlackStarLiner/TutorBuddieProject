@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="478.0" styleClass="primary-color" stylesheets="@../../values/myStyles.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.AddModuleController">
+   <children>
+      <Pane prefHeight="89.0" prefWidth="600.0" styleClass="secondary-color" stylesheets="@../../values/myStyles.css">
+         <children>
+            <Label layoutX="27.0" layoutY="33.0" prefHeight="50.0" prefWidth="252.0" stylesheets="@../../values/myStyles.css" text="ADD MODULE" />
+         </children></Pane>
+      <ComboBox fx:id="moduleComboBox" layoutX="26.0" layoutY="176.0" onAction="#onClickSelectModule" prefHeight="20.0" prefWidth="194.0" AnchorPane.leftAnchor="26.0" />
+      <Button fx:id="saveModuleButton" layoutX="26.0" layoutY="235.0" mnemonicParsing="false" onAction="#onClickSaveModuleButton" prefHeight="28.0" prefWidth="129.0" text="SAVE MODULE" />
+      <Label layoutX="26.0" layoutY="127.0" prefHeight="28.0" prefWidth="194.0" stylesheets="@../../values/myStyles.css" text="CHOOSE MOULE" />
+      <Button fx:id="addSessionButton" layoutX="195.0" layoutY="235.0" mnemonicParsing="false" onAction="#onClickAddSessionButton" prefHeight="28.0" prefWidth="129.0" text="ADD SESSION" />
+   </children>
+</AnchorPane>

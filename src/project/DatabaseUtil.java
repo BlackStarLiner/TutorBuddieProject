@@ -105,6 +105,7 @@ public class DatabaseUtil {
 
                 Module module = new Module(moduleCode, universityName, term, yearLevel, moduleName);
                 module.setModuleID(res.getInt("moduleID"));
+
                 return module;
             }
             /*String sql = "select * from Student where email = '"+userName+"' and password = '"+password+"' ";

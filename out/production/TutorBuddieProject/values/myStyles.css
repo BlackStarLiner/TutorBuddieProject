@@ -1,7 +1,33 @@
 .primary-color{
-   -fx-background-color: #1e1a54;
+   -fx-background-color: #358597;
 }
 
 .secondary-color{
-    -fx-background-color: #171856;
+    -fx-background-color: #f7c5cc;
+}
+
+.button{
+    -fx-background-color: #358597;
+    -fx-border-radius: 0;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-effect:  dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1);
+    -fx-text-fill: #f7c5cc;
+    -fx-font-style: bold;
+    -fx-font-size: 13;
+    -fx-font-family: "Goudy Old Style";
+}
+
+.label-heading{
+    -fx-text-fill: #358597;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+    -fx-font-family: "Arial Narrow";
+}
+
+.label{
+    -fx-text-fill: #f7c5cc;
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+    -fx-font-family: "Arial Narrow";
 }
