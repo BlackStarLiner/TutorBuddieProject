@@ -71,7 +71,7 @@
             <AnchorPane layoutX="1.0" prefHeight="468.0" prefWidth="230.0">
                <children>
                   <ImageView fitHeight="227.0" fitWidth="200.0" layoutX="15.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="23.0" layoutY="101.0" prefHeight="218.0" prefWidth="170.0" />
+                  <Label fx:id="textLabelMain" layoutX="23.0" layoutY="101.0" prefHeight="218.0" prefWidth="170.0" text="l;e'ldbjsldblsd" />
                </children></AnchorPane>
          </children></Pane>
    </right>

@@ -45,17 +45,17 @@ public class LoginController {
         String pass = passTextFieldLoginPage.getText();
 
         student = dbUtil.findStudent(userName, pass);
-        //FXMLLoader loader = new FXMLLoader(getClass().getResource("views/MainController.fxml"));
-        //Parent root = loader.load();
-
-        //MainController mainController = loader.getController();
 
         if(student != null) {
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-
-            stage.hide();
-            //mainController.student = student;
-            System.out.println(student.getpCode());
+            //Stage stage = (Stage) loginButton.getScene().getWindow();
+            //MainController mainController = new MainController();
+            //mainController.setStudentInformation(student);
+            MainController mainController = new MainController();
+            mainController.setStudentInformation(student);
+            switchToMain(loginButton);
+            //System.out.println(student.getpCode());
+            //stage.hide();
+            //switchToMain(loginButton);
         }
         else
             System.out.println("User not found");

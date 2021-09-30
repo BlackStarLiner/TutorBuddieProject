@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.SessionController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="226.0" styleClass="primary-color" stylesheets="@../../values/myStyles.css">
+         <children>
+            <Button fx:id="btnViewProfileAddSess" layoutX="32.0" layoutY="128.0" mnemonicParsing="false" onAction="#onClickViewProfile" prefHeight="35.0" prefWidth="162.0" text="VIEW PROFILE" />
+            <Button fx:id="btnSessionsAddSess" layoutX="32.0" layoutY="250.0" mnemonicParsing="false" onAction="#onClickSessions" prefHeight="35.0" prefWidth="162.0" text="SESSIONS" />
+            <Button fx:id="btnViewModulesAddSess" layoutX="32.0" layoutY="189.0" mnemonicParsing="false" onAction="#onClickViewModules" prefHeight="35.0" prefWidth="162.0" text="VIEW MODULES" />
+         </children></Pane>
+      <ChoiceBox fx:id="comboBoxStartTimesAddSess" layoutX="263.0" layoutY="135.0" prefHeight="26.0" prefWidth="287.0" />
+      <DatePicker fx:id="datePickerAddSess" layoutX="263.0" layoutY="71.0" onAction="#onDateSelection" prefHeight="26.0" prefWidth="287.0" />
+      <Button fx:id="btnSaveAddSess" layoutX="263.0" layoutY="234.0" mnemonicParsing="false" onAction="#onClickSaveBtn" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="SAVE" />
+      <Button fx:id="btnMakePaymentAddSess" layoutX="265.0" layoutY="295.0" mnemonicParsing="false" onAction="#onClickMakePayment" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="MAKE PAYMENT" />
+      <Button fx:id="btnCancelAddSess" layoutX="265.0" layoutY="352.0" mnemonicParsing="false" onAction="#onClickCancel" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="CANCEL" />
+      <Label layoutX="265.0" layoutY="14.0" prefHeight="26.0" prefWidth="193.0" text="ADD SESSIONS">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Label>
+      <ChoiceBox fx:id="comboBoxEndTimesAddSess" layoutX="263.0" layoutY="187.0" prefHeight="26.0" prefWidth="287.0" />
+      <Label layoutX="263.0" layoutY="52.0" prefHeight="18.0" prefWidth="113.0" text="Pick Date">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="263.0" layoutY="118.0" prefHeight="18.0" prefWidth="97.0" text="Session Start Time" />
+      <Label layoutX="263.0" layoutY="170.0" prefHeight="18.0" prefWidth="98.0" text="Session End Time" />
+   </children>
+</AnchorPane>

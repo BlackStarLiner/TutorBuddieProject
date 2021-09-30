@@ -3,11 +3,16 @@ package project;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.stage.Stage;
 import project.model.Module;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -17,6 +22,9 @@ public class AddModuleController implements Initializable {
     public ComboBox moduleComboBox;
     public Button saveModuleButton;
     public Button addSessionButton;
+
+    Stage mainStage;
+
     String selectedModule;
 
     DatabaseUtil dbUtil = new DatabaseUtil();
@@ -24,7 +32,6 @@ public class AddModuleController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         try {
 
             modules = dbUtil.getAllModules();
@@ -46,6 +53,8 @@ public class AddModuleController implements Initializable {
 
     public void onClickSaveModuleButton(ActionEvent event) throws SQLException, ClassNotFoundException {
 
+        mainStage = (Stage)saveModuleButton.getScene().getWindow();
+
         for (int i = 0; i < modules.size(); i++) {
             Module curModule = modules.get(i);
             if(selectedModule.equals(curModule.getModuleName())){
@@ -55,11 +64,13 @@ public class AddModuleController implements Initializable {
         }
     }
 
-    public void onClickAddSessionButton(ActionEvent event) {
+    public void onClickAddSessionButton(ActionEvent event) throws IOException {
 
+        Parent root = FXMLLoader.load(getClass().getResource("views/sessionsView.fxml"));
+        mainStage = (Stage)saveModuleButton.getScene().getWindow();
+        mainStage.setScene(new Scene(root,700,380));
     }
 
     public void onClickSelectModule(ActionEvent event) {
-
     }
 }

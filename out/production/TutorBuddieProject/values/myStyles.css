@@ -12,7 +12,7 @@
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
     -fx-effect:  dropshadow(three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1);
-    -fx-text-fill: #f7c5cc;
+    -fx-text-fill: #ffffff;
     -fx-font-style: bold;
     -fx-font-size: 13;
     -fx-font-family: "Goudy Old Style";
@@ -21,13 +21,12 @@
 .label-heading{
     -fx-text-fill: #358597;
     -fx-font-weight: bold;
-    -fx-font-size: 22;
+    -fx-font-size: 30;
     -fx-font-family: "Arial Narrow";
 }
 
-.label{
-    -fx-text-fill: #f7c5cc;
-    -fx-font-weight: bold;
+.text-label{
+    -fx-text-fill: #358597;
     -fx-font-size: 12;
     -fx-font-family: "Arial Narrow";
 }

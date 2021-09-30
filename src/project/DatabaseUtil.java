@@ -29,7 +29,7 @@ public class DatabaseUtil {
         return false;
     }
 
-    public Student findStudent(String userName, String password) throws SQLException, ClassNotFoundException {
+    public Student findStudent(String userName, String password) throws SQLException, ClassNotFoundException   {
 
         if (isConnected()){
 
@@ -56,7 +56,7 @@ public class DatabaseUtil {
                                     new SimpleStringProperty(city), new SimpleStringProperty(suburb),
                                     new SimpleIntegerProperty(pCode));
 
-                student.setStudentID(res.getInt("studentID"));
+                //student.setStudentID(res.getInt("studentID"));
                 return student;
             }
 
@@ -185,5 +185,9 @@ public class DatabaseUtil {
 
         }
         return -1;
+    }
+
+    public void updateStudent(){
+
     }
 }

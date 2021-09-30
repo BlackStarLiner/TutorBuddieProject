@@ -3,6 +3,7 @@ package project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -13,10 +14,12 @@ import javafx.stage.StageStyle;
 import project.model.Student;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
 
-public class MainController{
+public class MainController implements Initializable {
 
     //region Cached values
     public Button requestTutButton;
@@ -31,6 +34,7 @@ public class MainController{
     public Button mainLoginButton;
 
     public Student student;
+    public Label textLabelMain;
     //endregion
 
     //region Connection object
@@ -132,7 +136,6 @@ public class MainController{
         mainStage = (Stage) loginButton.getScene().getWindow();
         mainStage.setScene(new Scene(root, 600, 600));
     }
-
     /*public void onClickLoginBtnLogPage() throws SQLException, ClassNotFoundException, IOException {
         connectToDB();
         System.out.println(userNameTextFieldLoginPage.getText());
@@ -164,7 +167,6 @@ public class MainController{
             }
         }
     }*/
-
     private void switchToMain(Button buttonClicked) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("views/mainView.fxml"));
         mainStage = (Stage)buttonClicked.getScene().getWindow();
@@ -180,18 +182,20 @@ public class MainController{
         StudentProfileController studentProfileController = loader.getController();
         studentProfileController.setInformation(student);*/
         mainStage = (Stage)profileButton.getScene().getWindow();
-        mainStage.setScene(new Scene(root,800,500));
+        mainStage.setScene(new Scene(root,700,600));
     }
-
 
     @FXML
     public void onClickedMainLoginButton(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("views/loginView.fxml"));
-        //LoginController loginSceneController = loader.getController();
+        mainStage = (Stage)mainLoginButton.getScene().getWindow();
+        mainStage.setScene(new Scene(root,1000,600));
 
-        //mainStage = (Stage)mainLoginButton.getScene().getWindow();
-        //mainStage.setScene(new Scene(root, 500, 500));
+        /*LoginController loginSceneController = loader.getController();
+
+        mainStage = (Stage)mainLoginButton.getScene().getWindow();
+        mainStage.setScene(new Scene(root, 500, 500));
 
         Stage loginStage = new Stage();
         loginStage.setTitle("Tutor Buddie - Login");
@@ -199,7 +203,17 @@ public class MainController{
         loginStage.initStyle(StageStyle.UTILITY);
         loginStage.initModality(Modality.WINDOW_MODAL);
         loginStage.setScene(new Scene(root, 300, 300));
-        loginStage.showAndWait();
+        loginStage.show();*/
+    }
+
+    public void setStudentInformation(Student student){
+        this.student = student;
+        textLabelMain.setText(student.getFirstName());
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }
 
