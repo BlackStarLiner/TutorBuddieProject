@@ -1,5 +1,7 @@
 package project;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,11 +10,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import project.model.Module;
 import project.model.Session;
+import project.model.Student;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -23,6 +30,11 @@ public class SessionController implements Initializable {
     public ChoiceBox comboBoxStartTimesAddSess;
     public ChoiceBox comboBoxEndTimesAddSess;
 
+    public RadioButton radioBtnF2F;
+    public RadioButton radioBtnVirtual;
+
+    public ToggleGroup sessionTypeToggleGroup;
+
     public Button btnViewProfileAddSess;
     public Button btnSessionsAddSess;
     public Button btnViewModulesAddSess;
@@ -30,14 +42,17 @@ public class SessionController implements Initializable {
     public Button btnMakePaymentAddSess;
     public Button btnCancelAddSess;
 
-
-
     ObservableList<String> sessions;
     Stage mainStage;
 
     int indexStartTime;
     int indexEndTime;
+
     LocalDate selectedDate;
+    Student student;
+    Module module;
+
+    DatabaseUtil dbUtil = new DatabaseUtil();
 
     // Event handler for VIEW PROFILE BUTTON
     public void onClickViewProfile(ActionEvent event) throws IOException {
@@ -60,11 +75,44 @@ public class SessionController implements Initializable {
         mainStage.setScene(new Scene(root,600,400));
     }
 
-    public void onClickSaveBtn(ActionEvent event) {
+    // Saves the sessions selected
+    public void onClickSaveBtn(ActionEvent event) throws SQLException, ClassNotFoundException {
 
+        RadioButton selectedRButton = (RadioButton)sessionTypeToggleGroup.getSelectedToggle();
+        String date = datePickerAddSess.getValue().toString();
+        String startTime = comboBoxStartTimesAddSess.getValue().toString();
+        String endTime = comboBoxEndTimesAddSess.getValue().toString();
+        String sessionType = selectedRButton.getText();
+
+        if(sessionType != null && date != null && startTime != null && endTime != null){
+            Session session = new Session(startTime, endTime, date, sessionType, 1, student.getStudentID());
+            dbUtil.addSession(session);
+            StudentPaymentController sessController = new StudentPaymentController();
+            int numSessions = getNumSessions(startTime, endTime);
+            sessController.receivedData(mainStage, numSessions);
+        }
+
+        else{
+           setUpAlertDialog("Session Select", "Select all the fields required");
+        }
     }
 
-    public void onClickMakePayment(ActionEvent event) {}
+    // handles action on clicking the makePayment button
+    public void onClickMakePayment(ActionEvent event) throws IOException {
+
+        //SessionController loginSceneController = loader.getController();
+        Parent root = FXMLLoader.load(getClass().getResource("views/paymentView.fxml"));
+        mainStage = (Stage)btnViewProfileAddSess.getScene().getWindow();
+        //mainStage.setScene(new Scene(root, 500, 500));
+
+        Stage loginStage = new Stage();
+        loginStage.setTitle("Tutor Buddie - PAYMENT PAGE");
+        loginStage.initOwner(mainStage);
+        loginStage.initStyle(StageStyle.UTILITY);
+        loginStage.initModality(Modality.APPLICATION_MODAL);
+        loginStage.setScene(new Scene(root, 300, 400));
+        loginStage.show();
+    }
 
     public void onClickCancel(ActionEvent event) {}
 
@@ -118,15 +166,26 @@ public class SessionController implements Initializable {
                     indexEndTime = 0;
             }
         });
+
+        student =   new Student(new SimpleIntegerProperty(1), new SimpleStringProperty("Philasande"), new SimpleStringProperty("Tono"),
+                new SimpleStringProperty("philasande@gmail.com"), new SimpleStringProperty("University Way"),
+                new SimpleStringProperty("Gqeberha"), new SimpleStringProperty("Summerstrand"),
+                new SimpleIntegerProperty(6001));
+
+        module = new Module("JHA301","Wits","1","3","Business Entities", 1);
     }
 
+    // returns button type of the alert invoked
     private Optional<ButtonType> setUpAlertDialog(String header, String content){
-
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-
         alert.setTitle(header);
         alert.setContentText(content);
 
         return alert.showAndWait();
+    }
+
+    // calculates and returns number of hours for sessions selected
+    private int getNumSessions(String startTime, String endTime) {
+        return Math.abs((Integer.parseInt(startTime.substring(0,2))-(Integer.parseInt(endTime.substring(0,2)))));
     }
 }

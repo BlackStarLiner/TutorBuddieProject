@@ -9,13 +9,22 @@ public class Module {
     String moduleName;
     int moduleID;
 
-    public Module(String moduleCode, String universityName, String term, String yearLevel, String moduleName) {
+    public Module(String moduleCode, String universityName, String term, String yearLevel, String moduleName, int moduleID) {
         this.moduleCode = moduleCode;
         this.universityName = universityName;
         this.term = term;
         this.yearLevel = yearLevel;
         this.moduleName = moduleName;
+        this.moduleID = moduleID;
     }
+
+    /*public Module(String moduleCode, String universityName, String term, String yearLevel, String moduleName) {
+        this.moduleCode = moduleCode;
+        this.universityName = universityName;
+        this.term = term;
+        this.yearLevel = yearLevel;
+        this.moduleName = moduleName;
+    }*/
 
     public String getModuleCode() {
         return moduleCode;

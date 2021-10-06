@@ -15,11 +15,11 @@ public class Student {
 
 
 
-    public Student(SimpleStringProperty firstName, SimpleStringProperty lastName,
+    public Student(SimpleIntegerProperty studentID, SimpleStringProperty firstName, SimpleStringProperty lastName,
                    SimpleStringProperty email, SimpleStringProperty street,
                    SimpleStringProperty city, SimpleStringProperty suburb,
                    SimpleIntegerProperty pCode) {
-
+        this.studentID = studentID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

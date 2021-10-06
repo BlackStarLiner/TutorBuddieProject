@@ -30,6 +30,9 @@ public class StudentRegistrationController {
     public PasswordField passReEnteredTxtField;
     public Button registerBtn;
     public Button cancelBtn;
+    public TextField txtCardNumber;
+    public TextField txtCvcNumber;
+    public TextField txtFNameOnCard;
 
     //region Connection object
     Connection connection = null;

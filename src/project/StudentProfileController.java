@@ -83,7 +83,7 @@ public class StudentProfileController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        student =   new Student(new SimpleStringProperty("Philasande"), new SimpleStringProperty("Tono"),
+        student =   new Student(new SimpleIntegerProperty(1), new SimpleStringProperty("Philasande"), new SimpleStringProperty("Tono"),
                 new SimpleStringProperty("philasande@gmail.com"), new SimpleStringProperty("University Way"),
                 new SimpleStringProperty("Gqeberha"), new SimpleStringProperty("Summerstrand"),
                 new SimpleIntegerProperty(6001));

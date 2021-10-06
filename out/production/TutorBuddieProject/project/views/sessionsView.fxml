@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.SessionController">
+<AnchorPane prefHeight="503.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.SessionController">
    <children>
-      <Pane prefHeight="400.0" prefWidth="226.0" styleClass="primary-color" stylesheets="@../../values/myStyles.css">
+      <Pane prefHeight="503.0" prefWidth="239.0" styleClass="primary-color" stylesheets="@../../values/myStyles.css">
          <children>
             <Button fx:id="btnViewProfileAddSess" layoutX="32.0" layoutY="128.0" mnemonicParsing="false" onAction="#onClickViewProfile" prefHeight="35.0" prefWidth="162.0" text="VIEW PROFILE" />
             <Button fx:id="btnSessionsAddSess" layoutX="32.0" layoutY="250.0" mnemonicParsing="false" onAction="#onClickSessions" prefHeight="35.0" prefWidth="162.0" text="SESSIONS" />
@@ -14,9 +14,9 @@
          </children></Pane>
       <ChoiceBox fx:id="comboBoxStartTimesAddSess" layoutX="263.0" layoutY="135.0" prefHeight="26.0" prefWidth="287.0" />
       <DatePicker fx:id="datePickerAddSess" layoutX="263.0" layoutY="71.0" onAction="#onDateSelection" prefHeight="26.0" prefWidth="287.0" />
-      <Button fx:id="btnSaveAddSess" layoutX="263.0" layoutY="234.0" mnemonicParsing="false" onAction="#onClickSaveBtn" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="SAVE" />
-      <Button fx:id="btnMakePaymentAddSess" layoutX="265.0" layoutY="295.0" mnemonicParsing="false" onAction="#onClickMakePayment" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="MAKE PAYMENT" />
-      <Button fx:id="btnCancelAddSess" layoutX="265.0" layoutY="352.0" mnemonicParsing="false" onAction="#onClickCancel" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="CANCEL" />
+      <Button fx:id="btnSaveAddSess" layoutX="263.0" layoutY="346.0" mnemonicParsing="false" onAction="#onClickSaveBtn" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="SAVE" />
+      <Button fx:id="btnMakePaymentAddSess" layoutX="265.0" layoutY="395.0" mnemonicParsing="false" onAction="#onClickMakePayment" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="MAKE PAYMENT" />
+      <Button fx:id="btnCancelAddSess" layoutX="265.0" layoutY="448.0" mnemonicParsing="false" onAction="#onClickCancel" prefHeight="26.0" prefWidth="287.0" stylesheets="@../../values/myStyles.css" text="CANCEL" />
       <Label layoutX="265.0" layoutY="14.0" prefHeight="26.0" prefWidth="193.0" text="ADD SESSIONS">
          <font>
             <Font name="System Bold" size="17.0" />
@@ -29,5 +29,11 @@
       </Label>
       <Label layoutX="263.0" layoutY="118.0" prefHeight="18.0" prefWidth="97.0" text="Session Start Time" />
       <Label layoutX="263.0" layoutY="170.0" prefHeight="18.0" prefWidth="98.0" text="Session End Time" />
+      <Label layoutX="265.0" layoutY="227.0" prefHeight="17.0" prefWidth="97.0" text="Session Type" />
+      <RadioButton fx:id="radioBtnF2F" layoutX="268.0" layoutY="258.0" mnemonicParsing="false" text="Face to Face">
+         <toggleGroup>
+            <ToggleGroup fx:id="sessionTypeToggleGroup" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="radioBtnVirtual" layoutX="268.0" layoutY="287.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Virtual" toggleGroup="$sessionTypeToggleGroup" />
    </children>
 </AnchorPane>

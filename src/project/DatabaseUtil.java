@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import project.model.Module;
+import project.model.Session;
 import project.model.Student;
 import java.sql.*;
 
@@ -42,7 +43,7 @@ public class DatabaseUtil {
             ResultSet res = statement.executeQuery(sql);
 
             while (res.next()) {
-
+                int studID = res.getInt("studentID");
                 String fName = res.getString("fName");
                 String lName = res.getString("lName");
                 String emailAddress = res.getString("emailAddress");
@@ -51,7 +52,7 @@ public class DatabaseUtil {
                 String suburb = res.getString("suburb");
                 int pCode = res.getInt("postalCode");
 
-                Student student =   new Student(new SimpleStringProperty(fName), new SimpleStringProperty(lName),
+                Student student =   new Student(new SimpleIntegerProperty(studID), new SimpleStringProperty(fName), new SimpleStringProperty(lName),
                                     new SimpleStringProperty(emailAddress), new SimpleStringProperty(street),
                                     new SimpleStringProperty(city), new SimpleStringProperty(suburb),
                                     new SimpleIntegerProperty(pCode));
@@ -103,7 +104,7 @@ public class DatabaseUtil {
                 String yearLevel = res.getString("yearLevel");
                 String moduleName = res.getString("moduleName");
 
-                Module module = new Module(moduleCode, universityName, term, yearLevel, moduleName);
+                Module module = new Module(moduleCode, universityName, term, yearLevel, moduleName, res.getInt("moduleID"));
                 module.setModuleID(res.getInt("moduleID"));
 
                 return module;
@@ -155,7 +156,7 @@ public class DatabaseUtil {
                 String yearLevel = res.getString("yearLevel");
                 String moduleName = res.getString("moduleName");
 
-                Module module = new Module(moduleCode, universityName, term, yearLevel, moduleName);
+                Module module = new Module(moduleCode, universityName, term, yearLevel, moduleName, res.getInt("moduleID"));
                 modules.add(module);
             }
             return modules;
@@ -187,7 +188,54 @@ public class DatabaseUtil {
         return -1;
     }
 
-    public void updateStudent(){
+    public void addSession(Session session) throws SQLException, ClassNotFoundException {
 
+        connectToDB();
+
+        if (isConnected()){
+
+            String sql = "insert into Session(sessionStartTime, sessionDay, sessionType, tutorModuleID, studentID, sessionEndTime)" +
+                    " values (?, ?, ?, ?, ?, ?)";
+
+            PreparedStatement statement = connection.prepareStatement(sql);
+
+            statement.setString(1, session.getSessionStartTime());
+            statement.setString(2, session.getSessionDay());
+            statement.setString(3, session.getSessionType());
+            statement.setInt(4, session.getTutorModID());
+            statement.setInt(5, session.getStudentID());
+            statement.setString(6, session.getSessionEndTime());
+
+            statement.executeUpdate();
+        }
+    }
+
+    // returns the amount linked to customer with cardNumber supplied
+    public Double getFund(String cardNumber) throws SQLException, ClassNotFoundException {
+        connectToDB();
+        if (isConnected()){
+
+            String sql = "SELECT * FROM Accounts WHERE cardNumber = '"+cardNumber+"'";
+
+            Statement statement = connection.createStatement();
+            ResultSet res = statement.executeQuery(sql);
+
+            if(res.next())
+                return res.getDouble("funds");
+        }
+        return -1.0;
+    }
+
+
+    public void updateFunds(String cardNumber, double amount) throws SQLException, ClassNotFoundException {
+        connectToDB();
+        if (isConnected()){
+
+            String sql = "UPDATE Accounts set funds = '"+amount+"' WHERE cardNumber = '"+cardNumber+"'";
+
+            Statement statement = connection.createStatement();
+            ResultSet res = statement.executeQuery(sql);
+            connection.close();
+        }
     }
 }
