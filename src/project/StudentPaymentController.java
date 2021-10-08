@@ -1,7 +1,9 @@
 package project;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -11,10 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
-public class StudentPaymentController {
+public class StudentPaymentController implements Initializable {
 
     public TextField txtFNameOnCard;
     public TextField txtLNameOnCard;
@@ -26,42 +30,77 @@ public class StudentPaymentController {
     public Button btnCancel;
 
     double sessionCost = 150.0;
-    int numberOfSessions;
-
     DatabaseUtil dbUtil = new DatabaseUtil();
 
-    Stage mainStage;
+    // handles events when the payment button is clicked
+    public void onClickedPay(Event event) throws SQLException, ClassNotFoundException, IOException {
 
-    public void onClickedPay() throws SQLException, ClassNotFoundException, IOException {
-
+        Stage curStage = (Stage)((javafx.scene.Node)event.getSource()).getScene().getWindow();
         double funds = dbUtil.getFund(txtCardNumber.getText());
-        System.out.println("funds  = R" + funds);
-        if(funds >= 0 && funds > numberOfSessions*sessionCost){
-            System.out.println("Session cost" + numberOfSessions*sessionCost);
-            // update student account in the database
-            dbUtil.updateFunds(txtCardNumber.getText(), funds - numberOfSessions*sessionCost);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("PAYMENT PAGE");
-            alert.setContentText("Session(s) are successfully");
+        // check if all field are filled
+        if(!(txtFNameOnCard == null && txtLNameOnCard == null && txtCardNumber == null && txtCvcNumber == null)){
 
-            Optional<ButtonType> action = alert.showAndWait();
+            // check if funds are sufficient in student bank account
+            if(funds >= 0 && funds > numSessions*sessionCost){
 
-            // go back to profile view
-            if(action.get() == ButtonType.OK){
-                //mainStage = (Stage)btnViewProfileAddSess.getScene().getWindow();
-                Parent root = FXMLLoader.load(getClass().getResource("views/studentProfileView.fxml"));
-                mainStage.setScene(new Scene(root,600,400));
+                // update student account in the database
+                dbUtil.updateFunds(txtCardNumber.getText(), funds - numSessions*sessionCost);
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("TUTOR BUDDIE - PAYMENT PAGE");
+                alert.setContentText("Session(s) are successfully booked");
+
+                Optional<ButtonType> action = alert.showAndWait();
+
+                // go back to profile view
+                if(action.get() == ButtonType.OK){
+                    curStage.close();
+                    Parent root = FXMLLoader.load(getClass().getResource("views/studentProfileView.fxml"));
+                    mainStage.setScene(new Scene(root,600,400));
+                }
+            }
+
+            // warning message when there are insufficient funds in account
+            else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("TUTOR BUDDIE - PAYMENT PAGE");
+                alert.setContentText("Session(s) could not be booked due to insufficient funds");
+
+                Optional<ButtonType> action = alert.showAndWait();
+                // go back to profile view
+                if (action.get() == ButtonType.OK) {
+                    Parent root = FXMLLoader.load(getClass().getResource("views/studentProfileView.fxml"));
+                    mainStage.setScene(new Scene(root, 600, 400));
+                    curStage.close();
+                }
             }
         }
+        else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("TUTOR BUDDIE - PAYMENT PAGE");
+            alert.setContentText("Fill all the required field(s)");
+        }
+
     }
 
     public void onClickedCancel(ActionEvent event) {
+
     }
 
-    public void receivedData(Stage mainStage, int numSessions){
+    Stage mainStage;
+    int numSessions;
+
+    public void receivedData(Stage mainStage, int numSess){
         this.mainStage = mainStage;
-        numberOfSessions = numSessions;
+        numSessions = numSess;
+
+        System.out.println("Data received number of sessions : " + numSessions);
     }
 
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

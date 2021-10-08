@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
@@ -8,9 +9,14 @@
    <children>
       <Pane prefHeight="503.0" prefWidth="239.0" styleClass="primary-color" stylesheets="@../../values/myStyles.css">
          <children>
-            <Button fx:id="btnViewProfileAddSess" layoutX="32.0" layoutY="128.0" mnemonicParsing="false" onAction="#onClickViewProfile" prefHeight="35.0" prefWidth="162.0" text="VIEW PROFILE" />
-            <Button fx:id="btnSessionsAddSess" layoutX="32.0" layoutY="250.0" mnemonicParsing="false" onAction="#onClickSessions" prefHeight="35.0" prefWidth="162.0" text="SESSIONS" />
-            <Button fx:id="btnViewModulesAddSess" layoutX="32.0" layoutY="189.0" mnemonicParsing="false" onAction="#onClickViewModules" prefHeight="35.0" prefWidth="162.0" text="VIEW MODULES" />
+            <Button fx:id="btnViewProfileAddSess" layoutX="23.0" layoutY="199.0" mnemonicParsing="false" onAction="#onClickViewProfile" prefHeight="53.0" prefWidth="194.0" text="VIEW PROFILE" />
+            <Button fx:id="btnSessionsAddSess" layoutX="24.0" layoutY="378.0" mnemonicParsing="false" onAction="#onClickSessions" prefHeight="53.0" prefWidth="194.0" text="SESSIONS" />
+            <Button fx:id="btnViewModulesAddSess" layoutX="24.0" layoutY="297.0" mnemonicParsing="false" onAction="#onClickViewModules" prefHeight="53.0" prefWidth="194.0" text="VIEW MODULES" />
+            <ImageView fitHeight="92.0" fitWidth="114.0" layoutX="75.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/School/2021/WRRV301%20-%20Project/S2/Implementation/TutorBuddieProject/res/images/timetable.png" />
+               </image>
+            </ImageView>
          </children></Pane>
       <ChoiceBox fx:id="comboBoxStartTimesAddSess" layoutX="263.0" layoutY="135.0" prefHeight="26.0" prefWidth="287.0" />
       <DatePicker fx:id="datePickerAddSess" layoutX="263.0" layoutY="71.0" onAction="#onDateSelection" prefHeight="26.0" prefWidth="287.0" />

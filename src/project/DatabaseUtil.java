@@ -56,8 +56,6 @@ public class DatabaseUtil {
                                     new SimpleStringProperty(emailAddress), new SimpleStringProperty(street),
                                     new SimpleStringProperty(city), new SimpleStringProperty(suburb),
                                     new SimpleIntegerProperty(pCode));
-
-                //student.setStudentID(res.getInt("studentID"));
                 return student;
             }
 
@@ -189,9 +187,7 @@ public class DatabaseUtil {
     }
 
     public void addSession(Session session) throws SQLException, ClassNotFoundException {
-
         connectToDB();
-
         if (isConnected()){
 
             String sql = "insert into Session(sessionStartTime, sessionDay, sessionType, tutorModuleID, studentID, sessionEndTime)" +
@@ -227,14 +223,14 @@ public class DatabaseUtil {
     }
 
 
+    // updates the amount that customer has on their account after payment
     public void updateFunds(String cardNumber, double amount) throws SQLException, ClassNotFoundException {
         connectToDB();
         if (isConnected()){
 
             String sql = "UPDATE Accounts set funds = '"+amount+"' WHERE cardNumber = '"+cardNumber+"'";
-
             Statement statement = connection.createStatement();
-            ResultSet res = statement.executeQuery(sql);
+            statement.executeUpdate(sql);
             connection.close();
         }
     }

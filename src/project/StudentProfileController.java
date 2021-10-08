@@ -1,8 +1,6 @@
 package project;
 
 
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -23,8 +21,6 @@ import project.model.Student;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -75,7 +71,7 @@ public class StudentProfileController implements Initializable {
     public void onClickEditProfileDetailsButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("views/studentEditProfileView.fxml"));
         mainStage = (Stage)editProfileButton.getScene().getWindow();
-        mainStage.setScene(new Scene(root,700,600));
+        mainStage.setScene(new Scene(root));
     }
 
     public void onClickSessionButton(ActionEvent event) {
@@ -83,15 +79,9 @@ public class StudentProfileController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        student =   new Student(new SimpleIntegerProperty(1), new SimpleStringProperty("Philasande"), new SimpleStringProperty("Tono"),
-                new SimpleStringProperty("philasande@gmail.com"), new SimpleStringProperty("University Way"),
-                new SimpleStringProperty("Gqeberha"), new SimpleStringProperty("Summerstrand"),
-                new SimpleIntegerProperty(6001));
-
-        displayStudentDisplay();
     }
 
-    private void displayStudentDisplay(){
+    private void setupStudentDisplay(){
         firstNameLabelProfile.setText(student.getFirstName());
         surnameLabelProfile.setText(student.getLastName());
         emailLabelProfile.setText(student.getEmail());
@@ -105,6 +95,16 @@ public class StudentProfileController implements Initializable {
     public void onClickAddModuleButton(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("views/addModuleView.fxml"));
         mainStage = (Stage)editProfileButton.getScene().getWindow();
-        mainStage.setScene(new Scene(root,700,600));
+        mainStage.setScene(new Scene(root));
+    }
+
+    // data received from outside classes
+    public void receiveData(Student student, Stage mainStage){
+        this.student = student;
+        this.mainStage = mainStage;
+        setupStudentDisplay();
+    }
+
+    public void onClickLanding(ActionEvent event) {
     }
 }

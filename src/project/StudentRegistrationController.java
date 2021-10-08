@@ -103,4 +103,6 @@ public class StudentRegistrationController {
         statement = connection.createStatement();
     }
 
+    public void receivedData(Stage mainStage, Button mainLoginButton) {
+    }
 }

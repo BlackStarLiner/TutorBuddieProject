@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.StudentRegistrationController">
-   <padding>
-      <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
-   </padding>
-</BorderPane>
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.StudentPaymentController">
+   <children>
+      <AnchorPane prefHeight="358.0" prefWidth="370.0">
+         <children>
+            <TextField fx:id="txtCardNumber" layoutX="26.0" layoutY="206.0" prefHeight="26.0" prefWidth="217.0" />
+            <Label layoutX="28.0" layoutY="188.0" prefHeight="18.0" prefWidth="131.0" styleClass="text-label" stylesheets="@../../values/myStyles.css" text="CARD NUMBER" />
+            <Label layoutX="28.0" layoutY="245.0" prefHeight="18.0" prefWidth="98.0" styleClass="text-label" stylesheets="@../../values/myStyles.css" text="CVC NUMBER" />
+            <TextField fx:id="txtCvcNumber" layoutX="29.0" layoutY="264.0" prefHeight="26.0" prefWidth="68.0" />
+            <Label layoutX="25.0" layoutY="71.0" prefHeight="18.0" prefWidth="98.0" styleClass="text-label" stylesheets="@../../values/myStyles.css" text="FIRST NAME" />
+            <TextField fx:id="txtFNameOnCard" layoutX="25.0" layoutY="93.0" prefHeight="26.0" prefWidth="218.0" />
+            <Button fx:id="btnPay" layoutX="25.0" layoutY="306.0" mnemonicParsing="false" onAction="#onClickedPay" prefHeight="26.0" prefWidth="138.0" stylesheets="@../../values/myStyles.css" text="PAY" />
+            <Button fx:id="btnCancel" layoutX="191.0" layoutY="306.0" mnemonicParsing="false" onAction="#onClickedCancel" prefHeight="26.0" prefWidth="138.0" stylesheets="@../../values/myStyles.css" text="CANCEL" />
+            <Label layoutX="25.0" layoutY="128.0" prefHeight="18.0" prefWidth="98.0" styleClass="text-label" stylesheets="@../../values/myStyles.css" text="LAST NAME" />
+            <TextField fx:id="txtLNameOnCard" layoutX="25.0" layoutY="150.0" prefHeight="26.0" prefWidth="218.0" />
+            <Label layoutX="25.0" layoutY="13.0" prefHeight="34.0" prefWidth="254.0" text="MAKE PAYMENT">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
